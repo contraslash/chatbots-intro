@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+        @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+        @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+        body { font-family: 'Droid Serif'; }
+        h1, h2, h3 {
+            font-family: 'Yanone Kaffeesatz';
+            font-weight: normal;
+        }
+        .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+    <link rel="stylesheet" type="text/css" href="vendor/remark/remark_theme.css"/>
+</head>
+<body>
+<textarea id="source">
+
+class: center, middle, light
+
+# Chatbots con python
+
+### Mauricio Collazos
+
+.footnote[]
+---
+Antes de comenzar colocar codigo QR y preguntar sobre que tanto saben de chatbots
+---
+
+# Un poco de PLN
+
+El Procesamiento de lenguaje natural es un subcampo de la Inteligencia Artificial que estudia las interacciones entre una computadora y el lenguaje humano. <sup>[1](https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales)</sup>
+
+Usualmente dividimos el PLN en dos grandes partes
+
+.left[
+### Sintaxis
+
+- Análisis morfológico
+- Análisis POS (Part of Speech)
+- Análisis Sintáctico
+]
+.right[
+### Semántica
+
+- Reconocimiento de Entidades Nombradas (NER)
+- Desambiguación de Palabras
+- Entendimiento de Lenguaje
+]
+
+.footnote[]
+---
+class: center
+# De una manera mas clara
+El gato negro come salmón ahumado
+![http://liceu.uab.cat/~joaquim/language_technology/NLP/PLN_analisis.html](http://liceu.uab.cat/~joaquim/language_technology/NLP/gato_Freeling.jpg)
+
+---
+# Aplicaciones
+
+- Sistemas pregunta respuesta
+- Traducción automática
+- Análisis de sentimientos
+- Resumen automático
+- Análisis de discurso
+---
+# Ahora si, Chatbots
+
+Un chatbot es un agente conversacional que interactua contigo por medio de un proveedor de chat.
+
+### Proveedores
+
+- Facebook Messenger
+- Slack
+- Telegram
+- Mensajes de Texto
+
+---
+# Trabajo de un agente conversacional
+
+- Extracción: La primera labor de un agente conversacional es extraer información útil
+- Clasificación: La segunda labor es entender la intención del texto
+- Producción: La tercera y última labor es producir una respuesta
+---
+![https://chatbotslife.com/ultimate-guide-to-leveraging-nlp-machine-learning-for-you-chatbot-531ff2dd870c](https://cdn-images-1.medium.com/max/800/1*r8rR34sfjX4zdM0tXOsvaQ.png)
+---
+# Ejemplo usando NLTK para aprendizaje basado en reglas
+---
+[Ejemplo de IMDB](https://www.kaggle.com/c/word2vec-nlp-tutorial/details/part-1-for-beginners-bag-of-words)
+---
+Presentar alternativas de mercado como WIT, API, LUIS y LEX
+---
+Entrar en materia con rasa NLU
+---
+Mostrar ejemplo de archivo de configuracion en JSON
+---
+Meme de una vaina loca con configuración en Markdown
+---
+Presentar el servidor de RASA
+---
+Dejar la interfaz lista para comunicarse con messenger y con slack
+---
+Construir un chatbot usando recast API
+---
+Dar las gracias y huir
+---
+class:
+
+# Referencias
+
+- [Rework Google OKR](https://rework.withgoogle.com/print/guides/6229207193485312/)
+- [OKRs](http://blog.contraslash.com/okr/)
+
+</textarea>
+<script src="vendor/remark/remark.min.js">
+</script>
+<script>
+    var slideshow = remark.create();
+</script>
+</body>
+</html>
