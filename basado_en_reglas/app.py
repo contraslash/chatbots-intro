@@ -38,9 +38,19 @@ def classification(raw_text):
 
 def production(intent, entities):
     if intent == "list":
-        return "Todas las tareas son: {}".format(
-            "{}".format(zip(range(len(tasks)), tasks))
+        return "Todas las tareas son: \n{}".format(
+            "{}".format(
+                "\n".join(
+                    [
+                        "{} - {}".format(x, y) for x, y in zip(
+                            range(len(tasks)),
+                            tasks
+                        )
+                    ]
+                )
+            )
         )
+
     elif intent == "show":
         return "Las tareas solicitadas son: {}".format(
             "\n".join(
@@ -58,12 +68,12 @@ def production(intent, entities):
 
 
 if __name__ == "__main__":
-    print("Bienvenido a tu lista de tareas, que deseas hacer")
-    raw_text = raw_input()
+    # print()
+    raw_text = input("Bienvenido a tu lista de tareas, que deseas hacer > ")
     while raw_text != "salir":
         entities = extraction(raw_text)
         intent = classification(raw_text)
         response = production(intent, entities)
-        print("que otra cosa deseas hacer")
+
         print(response) if response is not None else ""
-        raw_text = raw_input()
+        raw_text = input("que otra cosa deseas hacer > ")
