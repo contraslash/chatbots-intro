@@ -163,7 +163,55 @@ class: center
 # rasa NLU
 ![rasa NLU](https://avatars0.githubusercontent.com/u/21214473)
 ---
-Mostrar ejemplo de archivo de configuracion en JSON
+# Configuración de la data
+```json
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "muestrame la lista",
+        "intent": "list",
+        "entities": []
+      },
+      {
+        "text": "borrar 1",
+        "intent": "delete",
+        "entities": [
+          {
+            "start": 7,
+            "end": 8,
+            "value": "1",
+            "entity": "task_id"
+          }
+        ]
+      }
+      {
+        "text": "mostrar",
+        "intent": "show",
+        "entities": []
+      }
+    ]
+  }
+}
+```
+---
+# Usando RASA
+
+Entrenar el modelo
+```bash
+python -m rasa_nlu.train -c config.json
+```
+
+Usando el modelo
+```python
+model_path = "models/default/model_20171006-164306"
+config_path = "config.json"
+interpreter = Interpreter.load(
+      Metadata.load(model_path),
+      RasaNLUConfig(config_path)
+  )
+interpreter.parse(u"hola mundo")
+```
 ---
 # Y en Markdown
 ![https://media.giphy.com/media/FBzqZGthkW6KQ/giphy.gif](https://media.giphy.com/media/FBzqZGthkW6KQ/giphy.gif)
@@ -172,10 +220,17 @@ Presentar el servidor de RASA
 ---
 Dejar la interfaz lista para comunicarse con messenger y con slack
 ---
-Construir un chatbot usando recast API
----
 # Las cosas se pueden complicar
 ![https://media.giphy.com/media/UedEkAAyEhMLC/giphy.gif](https://media.giphy.com/media/UedEkAAyEhMLC/giphy.gif)
+---
+# Enlaces Útiles
+
+- [Curso de Stanford con Deep Learning para NLP](http://cs224d.stanford.edu/)
+- [Video Curso de NLP con Deep Learning](https://www.youtube.com/watch?v=OQQ-W_63UgQ&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6)
+- [Rasa Core es Open Source](https://medium.com/rasa-blog/a-new-approach-to-conversational-software-2e64a5d05f2a)
+
+- [ChatbotsLife](https://chatbotslife.com/)
+- [CharbotsMagazine](https://chatbotsmagazine.com/)
 ---
 Dar las gracias y huir
 ---
@@ -183,8 +238,6 @@ class:
 
 # Referencias
 
-- [Rework Google OKR](https://rework.withgoogle.com/print/guides/6229207193485312/)
-- [OKRs](http://blog.contraslash.com/okr/)
 
 </textarea>
 <script src="vendor/remark/remark.min.js">

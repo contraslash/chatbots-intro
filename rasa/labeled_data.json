@@ -1,0 +1,116 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "muestrame la lista",
+        "intent": "list",
+        "entities": []
+      },
+      {
+        "text": "lista",
+        "intent": "list",
+        "entities": []
+      },
+      {
+        "text": "mostrar",
+        "intent": "show",
+        "entities": []
+      },
+      {
+        "text": "todo",
+        "intent": "list",
+        "entities": []
+      },
+      {
+        "text": "tarea 1",
+        "intent": "show",
+        "entities": [
+          {
+            "start": 6,
+            "end": 7,
+            "value": "1",
+            "entity": "task_id"
+          }
+        ]
+      },
+      {
+        "text": "mostrar: 1,2,3",
+        "intent": "show",
+        "entities": [
+          {
+            "start": 9,
+            "end": 10,
+            "value": "1",
+            "entity": "task_id"
+          },
+          {
+            "start": 11,
+            "end": 12,
+            "value": "2",
+            "entity": "task_id"
+          },
+          {
+            "start": 13,
+            "end": 14,
+            "value": "3",
+            "entity": "task_id"
+          }
+        ]
+      },
+      {
+        "text": "eliminar 1",
+        "intent": "delete",
+        "entities": [
+          {
+            "start": 9,
+            "end": 10,
+            "value": "1",
+            "entity": "task_id"
+          }
+        ]
+      },
+      {
+        "text": "borrar 1",
+        "intent": "delete",
+        "entities": [
+          {
+            "start": 7,
+            "end": 8,
+            "value": "1",
+            "entity": "task_id"
+          }
+        ]
+      },
+      {
+        "text": "crear: saludar",
+        "intent": "create",
+        "entities": [
+          {
+            "start": 7,
+            "end": 14,
+            "value": "saludar",
+            "entity": "task"
+          }
+        ]
+      },
+      {
+        "text": "nueva tarea: despedirme, hacer mercado",
+        "intent": "create",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "despedirme",
+            "entity": "task"
+          },
+          {
+            "start": 25,
+            "end": 38,
+            "value": "hacer mercado",
+            "entity": "task"
+          }
+        ]
+      }
+    ]
+  }
+}
