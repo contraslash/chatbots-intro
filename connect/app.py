@@ -18,7 +18,7 @@ app = Sanic(__name__)
 def facebook(request):
     print(request.json)
     print(request.raw_args)
-    if request.raw_args.get("hub.subscribe", ""):
+    if request.raw_args.get("hub.mode", "") == "subscribe":
         if request.raw_args.get(
             "hub.verify_token",
             ""
@@ -32,7 +32,7 @@ def facebook(request):
         body = request.json
         for entry in body["entry"]:
             for messaging in entry['messaging']:
-                if messaging['message']:
+                if messaging.get('message', ""):
                     print("Menssage:", messaging['message'])
                     raw_text = messaging['message']['text']
                     entities, intent = rasa.extration_and_classification(
