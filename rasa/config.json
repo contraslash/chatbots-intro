@@ -1,7 +1,7 @@
 {
 	"pipeline": "mitie",
 	"path": "models",
-	"data": "labeled_data.json",
+  "data": "labeled_data.md",
 	"log_level": "DEBUG",
   "mitie_file": "/Users/ma0/Desktop/contraslash/projects/m_assistant/MITIE/MITIE-models/spanish/total_word_feature_extractor.dat"
 }

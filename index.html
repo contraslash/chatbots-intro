@@ -151,13 +151,13 @@ Ejemplo tomado de [Kaggle](https://www.kaggle.com/c/word2vec-nlp-tutorial)
 # Algunos enlaces útiles
 
 ### Diferencias entre tecnologías comerciales
-[Understanding Differences between different ai platforms](https://www.linkedin.com/pulse/understanding-differences-between-different-ai-platforms-abraham-kang/)
-[Comparison between Luis vs API vs WIT](https://stackoverflow.com/posts/39202305/revisions)
+- [Understanding Differences between different ai platforms](https://www.linkedin.com/pulse/understanding-differences-between-different-ai-platforms-abraham-kang/)
+- [Comparison between Luis vs API vs WIT](https://stackoverflow.com/posts/39202305/revisions)
 
 ### Otras arquitecturas de chatbots
 
-[Natural Language Pipeline for Chatbots](https://medium.com/@surmenok/natural-language-pipeline-for-chatbots-897bda41482)
-[Chatbot Architecture](https://medium.com/@surmenok/chatbot-architecture-496f5bf820ed)
+- [Natural Language Pipeline for Chatbots](https://medium.com/@surmenok/natural-language-pipeline-for-chatbots-897bda41482)
+- [Chatbot Architecture](https://medium.com/@surmenok/chatbot-architecture-496f5bf820ed)
 ---
 class: center
 # rasa NLU
@@ -216,9 +216,60 @@ interpreter.parse(u"hola mundo")
 # Y en Markdown
 ![https://media.giphy.com/media/FBzqZGthkW6KQ/giphy.gif](https://media.giphy.com/media/FBzqZGthkW6KQ/giphy.gif)
 ---
-Presentar el servidor de RASA
+# Configuración en Markdown
+```markdown
+## intent:list
+- muestrame la lista
+- lista
+- todo
+
+## intent:show
+- mostrar
+- tarea [1](task_id)
+- mostrar: [1](task_id),[2](task_id),[3](task_id)
+
+## intent:create
+- crear: [saludar](task)
+- nueva tarea: [despedirme](task), [hacer mercado](task)
+
+## intent:delete
+- eliminar [1](task_id)
+- borrar [1](task_id)
+
+```
 ---
-Dejar la interfaz lista para comunicarse con messenger y con slack
+# Rasa como microservicios
+```bash
+python -m rasa_nlu.server -c config.json
+```
+
+[Endpoints](https://rasahq.github.io/rasa_nlu/http.html#endpoints)
+
+- /parse
+- /train
+- /status
+- /config
+---
+# Integrando con facebook
+
+```python
+def send_response(sender_object, response):
+    data = dict()
+    data['recipient'] = sender_object
+    data['message'] = {
+        'text': response
+    }
+
+    query_params = {
+        'access_token': conf.FB_TOKEN
+    }
+
+    response = requests.post(
+        conf.FB_MESSENGER_URL,
+        params=query_params,
+        json=data
+    )
+```
 ---
 # Las cosas se pueden complicar
 ![https://media.giphy.com/media/UedEkAAyEhMLC/giphy.gif](https://media.giphy.com/media/UedEkAAyEhMLC/giphy.gif)
@@ -227,16 +278,19 @@ Dejar la interfaz lista para comunicarse con messenger y con slack
 
 - [Curso de Stanford con Deep Learning para NLP](http://cs224d.stanford.edu/)
 - [Video Curso de NLP con Deep Learning](https://www.youtube.com/watch?v=OQQ-W_63UgQ&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6)
-- [Rasa Core es Open Source](https://medium.com/rasa-blog/a-new-approach-to-conversational-software-2e64a5d05f2a)
+
+- [Documentación de rasa NLU](https://rasahq.github.io/rasa_nlu/)
 
 - [ChatbotsLife](https://chatbotslife.com/)
 - [CharbotsMagazine](https://chatbotsmagazine.com/)
 ---
-Dar las gracias y huir
----
-class:
+# Grandes noticias
 
-# Referencias
+- [Rasa Core es Open Source](https://medium.com/rasa-blog/a-new-approach-to-conversational-software-2e64a5d05f2a)
+
+- [Documentación de rara Core](https://core.rasa.ai/index.html)
+---
+Dar las gracias y huir
 
 
 </textarea>

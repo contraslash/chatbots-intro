@@ -3,8 +3,8 @@ from rasa_nlu.model import Metadata, Interpreter
 
 tasks = list()
 interpreter = None
-model_path = "models/default/model_20171006-164306"
-config_path = "config.json"
+model_path = "/Users/ma0/Desktop/contraslash/keynotes/chatbots-intro/rasa/models/default/model_20171006-164306"
+config_path = "/Users/ma0/Desktop/contraslash/keynotes/chatbots-intro/rasa/config.json"
 
 
 def configure():
@@ -70,9 +70,6 @@ if __name__ == "__main__":
     raw_text = input("Bienvenido a tu lista de tareas, que deseas hacer > ")
     while raw_text != "salir":
         entities, intent = extration_and_classification(raw_text)
-        from pprint import pprint
-        pprint(entities)
-        pprint(intent)
         response = production(intent, entities)
 
         print(response) if response is not None else ""
