@@ -4,6 +4,8 @@ Este repositorio es el material para una presentación introductoria al desarrol
 
 Este repositorio contiene una página web que se usa como presentación y está disponible en [Github Pages](https://contraslash.github.io/chatbots-intro/)
 
+[Video](https://youtu.be/svNEdXApx1E)
+
 Se presentan adicionalmente 3 carpetas extra, cada una con el código fuente de una aproximación mencionada en la presencación.
 
 - [basado_en_reglas](basado_en_reglas) contiene un archivo único en python que ejemplifica una manera sencilla de utilizar condicionales anidados para generar reglas de resolución de intenciones.
