@@ -3,7 +3,7 @@ from rasa_nlu.model import Metadata, Interpreter
 
 tasks = list()
 interpreter = None
-model_path = "/Users/ma0/Desktop/contraslash/keynotes/chatbots-intro/rasa/models/default/model_20171006-164306"
+model_path = "/Users/ma0/Desktop/contraslash/keynotes/chatbots-intro/rasa/models/default/model_20180211-053729"
 config_path = "/Users/ma0/Desktop/contraslash/keynotes/chatbots-intro/rasa/config.json"
 
 
