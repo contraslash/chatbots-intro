@@ -35,7 +35,7 @@ pytz==2017.2
 rasa-nlu==0.10.1
 requests==2.20.0
 s3transfer==0.1.11
-sanic==0.6.0
+sanic==20.12.6
 scikit-learn==0.19.0
 scipy==0.19.1
 simplejson==3.11.1
