@@ -44,7 +44,7 @@ smart-open==1.5.3
 tqdm==4.19.1.post1
 Twisted==17.9.0
 typing==3.6.2
-ujson==1.35
+ujson==5.2.0
 urllib3==1.23
 uvloop==0.8.1
 websockets==3.4
